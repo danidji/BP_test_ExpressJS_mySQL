@@ -12,15 +12,16 @@ router.get('/', function (req, res, next) {
     console.log("connecté à la base de donnée")
 
     //Requete SQL pour la bdd
-    db.query('SELECT * FROM users WHERE id_users=1', (err, result) => {
+
+    db.query(`SELECT * FROM users`, (err, result) => {
       if (err) throw err
 
-      // console.log(result[0].nom_users)
+      // console.log(result[0])
 
+      // Envoi des données de la BDD vers le index.pug pour l'affichage dans le navigateur
       res.render('index', {
         title: 'Mon test à la BDD',
-        nom: result[0].nom_users,
-        prenom: result[0].prenom_users,
+        mesData: result
       });
     })
 
