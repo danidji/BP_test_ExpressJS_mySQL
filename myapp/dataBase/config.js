@@ -1,6 +1,6 @@
 const config = {
     DATABASEUSER: "danGbe",
-    DATABASEPWD: "S8h8RP2s!56096K"
+    DATABASEPWD: ""
 }
 
 module.exports = config
