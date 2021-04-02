@@ -9,3 +9,6 @@ package-lock.json
 
 # hide map file
 *.map
+
+# hide config.js file
+*/database/config.js
