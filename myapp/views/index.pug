@@ -2,5 +2,19 @@ extends layout
 
 block content
   h1= title
-  p Welcome #{prenom} #{nom}
+  p Welcome to #{title}
 
+  //- Affichage des valeurs de la base de données dans un tableau
+  table 
+    thead 
+      tr 
+        //- Pour chaque clé de la première instance des données, on récupère le nom des clé pour l'en tête du tableau
+        each val, key in mesData[0]
+          th= key
+    tbody 
+      //-  Pour chaque utilisateur enregistré dans la base...
+      each user in mesData
+        tr 
+          //- on affiche sur chaque ligne les données contenues dans la base
+          each val in user 
+            td= val
