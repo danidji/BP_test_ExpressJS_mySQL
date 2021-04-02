@@ -1,6 +1,7 @@
 const config = require("./config")
 const mysql = require('mysql');
 
+// gestion de la connexion à la base de données
 const db = mysql.createConnection({
 
     host: "localhost",
@@ -16,5 +17,5 @@ const db = mysql.createConnection({
 
 
 
-
+// export de la gestion de connexion
 module.exports = db

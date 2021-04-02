@@ -1,16 +1,17 @@
 var express = require('express');
 var router = express.Router();
+
 const db = require('../dataBase/dataBase')
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
 
   // Connection bdd
-
   db.connect(function (err) {
     if (err) throw err
     console.log("connecté à la base de donnée")
 
+    //Requete SQL pour la bdd
     db.query('SELECT * FROM users WHERE id_users=1', (err, result) => {
       if (err) throw err
 
