@@ -49,20 +49,4 @@ app.use(function (err, req, res, next) {
 
 
 
-// Connection bdd
-
-db.connect(function (err) {
-  if (err) throw err
-  console.log("connecté à la base de donnée")
-
-  db.query('SELECT * FROM users', (err, result) => {
-    if (err) throw err
-    console.log(result)
-  })
-
-
-})
-
-
-
 module.exports = app;
